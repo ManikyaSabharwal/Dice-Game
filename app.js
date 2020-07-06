@@ -5,18 +5,22 @@ function initialization() {
   scores = [0, 0];
   activePlayer = 0;
   roundScore = 0;
+  turnCount = 10;
   gamePlaying = true;
 
   /* Reset Scores and Player Names*/
-  turnCount = 0;
   document.getElementById("score-0").textContent = "0";
   document.getElementById("score-1").textContent = "0";
+  document.getElementById("turns-0").textContent = "5";
+  document.getElementById("turns-1").textContent = "5";
 
   document.getElementById("name-0").textContent = "Player 1";
   document.getElementById("name-1").textContent = "Player 2";
 
   document.querySelector(".player-0-panel").classList.remove("winner");
   document.querySelector(".player-1-panel").classList.remove("winner");
+  document.querySelector('.player-turns-0').style.display = 'block';
+  document.querySelector('.player-turns-1').style.display = 'block';
   document.querySelector(".player-0-panel").classList.remove("active");
   document.querySelector(".player-1-panel").classList.remove("active");
   document.querySelector(".player-0-panel").classList.add("active");
@@ -51,13 +55,13 @@ function rollDice() {
       }
     }
   });
-  turnCount++;
+  turnCount--;
   scores[activePlayer] += parseInt(roundScore);
   //    Update the UI'
   updateUI(activePlayer);
 
   // Check if the player has already won the game or not.
-  if (turnCount >= 10) {
+  if (turnCount <= 0) {
     if (scores[0] >= scores[1]) {
       activePlayer = 0;
     } else {
@@ -70,6 +74,7 @@ function rollDice() {
     document
       .querySelector(".player-" + activePlayer + "-panel")
       .classList.remove("active");
+    document.querySelector('.player-turns-' + activePlayer).style.display = 'none';
     gamePlaying = false;
   }
   nextPlayer();
@@ -79,6 +84,8 @@ function updateUI(player) {
   setTimeout(() => {
     document.querySelector("#score-" + player).innerHTML = scores[player];
     document.querySelector("#score-" + player).classList.add("startRipple");
+    let turnsLeft = (Math.floor(turnCount/2) + turnCount%(parseInt(player)+1));
+    document.querySelector('#turns-' + player).textContent = turnsLeft < 0 ? 0: turnsLeft; 
   }, 1300);
 }
 

@@ -63,6 +63,11 @@ body {
   position: relative;
 }
 
+.player-turns-0,
+.player-turns-1 {
+  text-align: center;
+}
+
 .player-score {
   text-align: center;
   font-size: 80px;
@@ -75,7 +80,9 @@ body {
   background: #f7f7f7;
 }
 
-.active .player-name {
+.active .player-name,
+.active .player-turns-0,
+.active .player-turns-1{
   font-weight: 300;
   color: black;
 }
