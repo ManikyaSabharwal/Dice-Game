@@ -79,7 +79,7 @@ function updateUI(player) {
   setTimeout(() => {
     document.querySelector("#score-" + player).innerHTML = scores[player];
     document.querySelector("#score-" + player).classList.add("startRipple");
-  }, 1000);
+  }, 1300);
 }
 
 function toggleClasses(die) {
