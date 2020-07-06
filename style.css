@@ -82,7 +82,7 @@ body {
 
 .active .player-name,
 .active .player-turns-0,
-.active .player-turns-1{
+.active .player-turns-1 {
   font-weight: 300;
   color: black;
 }
@@ -206,7 +206,7 @@ i {
   transition: transform 1s ease-out;
 }
 .die-item {
-  background-color: #fefefe;
+  background-color: #0000f8;
   box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
     inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   display: grid;
@@ -228,7 +228,7 @@ i {
 }
 .dot {
   align-self: center;
-  background-color: #676767;
+  background-color: #ffffff;
   border-radius: 50%;
   box-shadow: inset -0.15rem 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
   display: block;
@@ -375,4 +375,32 @@ i {
 
 .startRipple {
   animation: ripple 1s ease-out;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="wrapper"] {
+    width: 500px;
+  }
+  button {
+    width: 10px;
+  }
+  .player-name {
+    font-size: 15px;
+    width: 100%;
+  }
+  .player-turns-0,
+  .player-turns-1 {
+    text-align: right;
+  }
+  .active .player-name::after {
+    content: "\2022";
+    position: absolute;
+    color: #eb4d4d;
+    top: -25px;
+    right: 50px;
+  }
+  .btn-new {
+    top: 60px;
+  }
 }
