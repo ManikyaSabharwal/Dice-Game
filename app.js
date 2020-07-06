@@ -49,6 +49,7 @@ function rollDice() {
         scores[activePlayer] += parseInt(roundScore);
         //    Update the UI
         document.querySelector('#score-'+activePlayer).textContent = scores[activePlayer];
+        document.querySelector('#score-'+activePlayer).classList.add('startRipple');
         console.log(scores);
 
         // Check if the player has already won the game or not.
@@ -62,10 +63,8 @@ function rollDice() {
             document.querySelector('#name-'+activePlayer).textContent = 'Winner!';
             document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
             document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
-            gamePlaying = false;
-            
-        }
-        
+            gamePlaying = false;   
+        }   
     nextPlayer();
   }
   
