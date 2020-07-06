@@ -66,7 +66,7 @@ body {
 .player-score {
   text-align: center;
   font-size: 80px;
-  font-weight: 100;
+  font-weight: 200;
   color: #eb4d4d;
   margin-bottom: 130px;
 }
@@ -87,26 +87,6 @@ body {
   color: #eb4d4d;
   top: -7px;
   right: 10px;
-}
-
-.player-current-box {
-  background: #eb4d4d;
-  color: #ffffff;
-  width: 40%;
-  margin: 0 auto;
-  padding: 13px;
-  text-align: center;
-}
-
-.player-current-label {
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-size: 12px;
-  color: #222;
-}
-
-.player-current-score {
-  font-size: 40px;
 }
 
 button {
@@ -213,10 +193,10 @@ i {
   width: 6rem;
 }
 .even-roll {
-  transition: transform 1.5s ease-out;
+  transition: transform 1s ease-out;
 }
 .odd-roll {
-  transition: transform 1.5s ease-out;
+  transition: transform 1s ease-out;
 }
 .die-item {
   background-color: #fefefe;
@@ -372,7 +352,6 @@ i {
     perspective: 1300px;
   }
 }
-
 
 @keyframes ripple {
   0% {
